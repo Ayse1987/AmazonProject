@@ -13,7 +13,7 @@ import ui.utilities.ConfigReader;
 import ui.utilities.Driver;
 import ui.utilities.ReusableMethods;
 
-
+import java.io.IOException;
 
 
 public class US_02_StepDef {
@@ -70,7 +70,11 @@ public class US_02_StepDef {
     }
     @Given("verify failure message is displayed")
     public void verify_email_failure_message_is_displayed() {
-        Assert.assertTrue(signInPage.continueButton.isDisplayed());
+       try {
+            Assert.assertTrue(signInPage.thereWasProblemMessage.isDisplayed());
+        }catch(Exception e){
+            Assert.assertTrue(signInPage.incorrectPhoneNumberMessage.isDisplayed());
+        }
     }
 
     @Given("clear email box")

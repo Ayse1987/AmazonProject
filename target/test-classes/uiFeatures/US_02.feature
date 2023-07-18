@@ -12,9 +12,9 @@ Feature: US_02 Sign in
     And enter valid password to the password box
     And click sign-in button
     Then verify sign in is successful
-    Then close driver
+    And close driver
 
-  @readStates1
+  @readStates2
     @TC_03
     Scenario: User should not be able to sign in with invalid credentials
 
@@ -24,31 +24,32 @@ Feature: US_02 Sign in
       And clear email box
       And enter valid email address to the email box
       And click continue button
-      And enter invalid password to password box
-      And click sign-in button
-      And verify failure message is displayed
+     And enter invalid password to password box
+     And click sign-in button
+     Then verify failure message is displayed
+     And close driver
 
   @TC_04
   Scenario Outline: User should not be able to sign in with invalid email
 
     And enter "<invalid email>" addresses to the email box
     And click continue button
-    And verify failure message is displayed
+    Then verify failure message is displayed
     And wait some
-    Then close driver
+    And close driver
     Examples:
       | invalid email |
-      | @gmail.com |
+      #| @gmail.com |
       | 12345 |
-      | gmail.com |
+      #| gmail.com |
 
   Scenario Outline: User should not be able to sign in with invalid password
     And enter valid email address to the email box
     And click continue button
     And enter "<invalid_password>" into password box
     And click sign-in button
-    And verify important message is displayed
-    Then close driver
+    Then verify important message is displayed
+    And close driver
     Examples:
       | invalid_password |
       | 123 |

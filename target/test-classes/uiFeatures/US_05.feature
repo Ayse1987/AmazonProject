@@ -5,6 +5,8 @@
       And enter "Lenovo" into search box
       And click the search button
 
+      #prices are not sorted low to high correctly
+
       @TC_06
       Scenario: User should be able to sort a product price Low to High
         When click sort by button

@@ -1,7 +1,7 @@
 package ui.utilities;
 
 import java.io.FileInputStream;
-import java.util.Properties;
+import java.util.*;
 
 public class ConfigReader {
     private static Properties properties;
@@ -17,6 +17,12 @@ public class ConfigReader {
         }
     }
     public static String getProperty(String key){
+
         return properties.getProperty(key);
+    }
+
+    public static void main(String[] args) {
+        List<Integer> a=new ArrayList();
+
     }
 }

@@ -29,7 +29,7 @@ public class SignInPage {
     @FindBy (xpath = "//*[@class='a-button-input']")
     public WebElement signInButton;
 
-    @FindBy(xpath = "(//*[text()='Hello, Necip'])[1]")
+    @FindBy(xpath = "(//*[text()='Hello, Ayse'])[1]")
     public WebElement helloName;
 
     @FindBy(xpath = "//*[text()='Sign Out']")
@@ -40,5 +40,8 @@ public class SignInPage {
 
     @FindBy(xpath = "//*[text()='Important Message!']")
     public WebElement importantMessage;
+
+    @FindBy(xpath="//*[text()='Incorrect phone number']")
+    public WebElement incorrectPhoneNumberMessage;
 
 }
