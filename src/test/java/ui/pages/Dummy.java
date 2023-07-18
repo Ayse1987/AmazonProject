@@ -35,7 +35,7 @@ public static void a(){
         for(int i= arr.length-1;i>=0;i--){
             if(arr[i]!=arr[arr.length-2]){
                 System.out.println(arr[arr.length-2]);
-                break
+                break;
 
             }
         }
